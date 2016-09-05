@@ -1,0 +1,64 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Trebuchet MS";
+}
+
+body{
+    background:#ebebeb;
+}
+.button{
+    display:inline-block;
+    padding:8px 10px;
+    background:#333;
+    color:white;
+    font-weight:lighter;
+    font-size:16px;
+    border:0;
+    border-radius:3px;
+}
+.button:hover{background:black; cursor:pointer;}
+#wrap-prova{
+    width:800px;
+    margin:50px auto;
+    height:400px;
+}
+#wrap-prova #next{ float:right; }
+#wrap-prova h1{
+    font-size:22px;
+    color:#069;
+    font-weight:lighter;
+    margin-bottom:20px;
+    width:100%;
+    float:left;
+}
+
+#wrap-prova .questao {
+    float:left;
+    width:100%;
+    padding:20px;
+    background:white;
+    margin-bottom:10px;
+}
+#wrap-prova .questao h2{
+    font-size:18px;
+    color:#666;
+    float:left;
+    width:100%;
+    margin-bottom:15px;
+}
+#wrap-prova .questao p{
+    display:block;
+    margin-bottom:8px;
+    font-size:16px;
+    color:#333;
+}
+#wrap-prova .questao input[type=text]{
+    padding:8px;
+    width:100%;
+    border:1px solid #ccc;
+    outline:none;
+    font-size:17px;
+    color:#666;
+}
