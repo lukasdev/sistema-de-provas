@@ -3,7 +3,12 @@
     padding:0;
     box-sizing:border-box;
     font-family:"Trebuchet MS";
+    list-style-type:none;
+    text-decoration:none;
 }
+
+a{color:#09c;}
+a:hover{text-decoration:underline;}
 
 body{
     background:#ebebeb;
@@ -19,10 +24,26 @@ body{
     border-radius:3px;
 }
 .button:hover{background:black; cursor:pointer;}
-#wrap-prova{
-    width:800px;
+#wrap-geral{
+    width:1000px;
     margin:50px auto;
+    position:relative;
+}
+
+#prova-lista{
+    position:absolute;
+    top:0;
+    left:0;
+    width:28%;
+    background:white;
+    padding:8px;
+    min-height:100%;
+}
+#wrap-prova{
+    float:right;
+    width:70%;
     height:400px;
+    min-height:400px;
 }
 #wrap-prova #next{ float:right; }
 #wrap-prova h1{
