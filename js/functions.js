@@ -2,6 +2,7 @@ $(function(){
     var provaId = 0;
     $('.open-prova').on('click', function(e){
         e.preventDefault();
+        $('#next, #prev, .begin, .timer').show();
         provaId = $(this).attr('data-id');
         $('.questoes').html('');
 
@@ -30,6 +31,41 @@ $(function(){
                 });
             }
         });
+        return false;
+    });
+
+    var iterator = 0;
+
+    $('body').on('click', '#next', function(e){
+        e.preventDefault();
+        iterator++;
+        var qtdQuestoes = ($('.questao').length-1);
+        if (iterator == qtdQuestoes) {
+            $(this).attr('id', 'concluir');
+            $(this).addClass('azul');
+            $(this).text('Concluir')
+        }
+
+        $('.questao').hide();
+        $('.questao:eq('+iterator+')').show();
+        return false;
+    });
+
+    $('body').on('click', '#prev', function(e){
+        e.preventDefault();
+        var qtdQuestoes = ($('.questao').length-1);
+        if (iterator == qtdQuestoes) {
+            $('#concluir').removeClass('azul');
+            $('#concluir').text('Próxima');
+            $('#concluir').attr('id', 'next');
+        }
+        iterator--;
+        if (iterator < 0) {
+            iterator = 0;
+        }
+
+        $('.questao').hide();
+        $('.questao:eq('+iterator+')').show();
         return false;
     });
 });

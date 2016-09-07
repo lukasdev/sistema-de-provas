@@ -26,7 +26,11 @@
 
 
             <section id="wrap-prova">
-                <h1>Titulo aleatório</h1>
+                <div class="begin">
+                    <button id="comecar" class="button azul">Iniciar Prova</button>
+                </div>
+
+                <h1></h1>
 
                 <div class="questoes">
                 
@@ -37,10 +41,12 @@
             </section>
 
             <div style="clear:both;"></div>
+            <span class="timer">39:59</span>
         </section>
         
 
         <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/timer.js"></script>
         <script type="text/javascript" src="js/functions.js"></script>
     </body>
 </html>
