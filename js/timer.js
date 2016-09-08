@@ -21,10 +21,3 @@ function converteEmSegundos(time){
     var minSec = (tempo[1]*60);
     return horaSec+minSec+Number(tempo[2]);
 }
-
-var tempo = 40;
-var segundos = tempo*60;
-setInterval(function(){
-    segundos--;
-    //$('.timer').html(converteEmTempo(segundos));
-}, 1000);

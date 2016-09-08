@@ -50,6 +50,9 @@ body{
     display:none;
 }
 
+#wrap-geral .timer.danger{
+    background:red;
+}
 #prova-lista{
     position:absolute;
     top:0;

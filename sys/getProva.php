@@ -1,4 +1,5 @@
-<?php 
+<?php
+if($_SERVER['REQUEST_METHOD'] == 'POST') {
     include '../config.php';
 
     if(!isset($_POST['prova'])) {
@@ -50,4 +51,5 @@
     }
 
     die(json_encode($retorno));
+}
 ?>

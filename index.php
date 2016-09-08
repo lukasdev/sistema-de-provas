@@ -15,13 +15,17 @@
                 $provas->execute();
 
                 while ($row = $provas->fetchObject()) {
+                    $verificaHistorico = $pdo->prepare("SELECT * FROM `historico` WHERE `id_aluno` = ? AND 
+                        `id_prova` = ?");
+                    $verificaHistorico->execute([1, $row->id]);
+                    if ($verificaHistorico->rowCount() == 0) {
             ?>
                 <li class="open-prova" data-id="<?php echo $row->id;?>">
-                    <a href="prova.php?prova=<?php echo $row->id;?>">
+                    <a href="#">
                         <?php echo $row->titulo;?>
                     </a>
                 </li>
-            <?php }?>
+            <?php }}?>
             </ul>
 
 
