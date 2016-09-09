@@ -62,6 +62,12 @@ body{
     padding:8px;
     min-height:100%;
 }
+#prova-lista li{
+    float:left;
+    width:100%;
+    border-bottom:1px solid #ccc;
+    padding:8px 0;
+}
 #wrap-prova{
     float:right;
     width:70%;
@@ -78,7 +84,7 @@ body{
     width:100%;
     float:left;
 }
-#wrap-prova .begin{
+#wrap-prova .begin, .sucesso{
     position:absolute;
     top:0;
     left:0;
@@ -88,7 +94,16 @@ body{
     background:rgba(255,255,255, 0.8);
     display:none;
 }
-
+.sucesso{
+    text-align:center; 
+    background:rgba(255,255,255, 1);
+}
+.sucesso p{
+    font-size:18px;
+    font-family:"Trebuchet";
+    color:#666;
+    margin-top:20%;
+}
 #wrap-prova .begin .button{
     position:absolute;
     top:50%;

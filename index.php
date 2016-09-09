@@ -20,7 +20,7 @@
                     $verificaHistorico->execute([1, $row->id]);
                     if ($verificaHistorico->rowCount() == 0) {
             ?>
-                <li class="open-prova" data-id="<?php echo $row->id;?>">
+                <li class="open-prova prova<?php echo $row->id;?>" data-id="<?php echo $row->id;?>">
                     <a href="#">
                         <?php echo $row->titulo;?>
                     </a>
@@ -32,6 +32,10 @@
             <section id="wrap-prova">
                 <div class="begin">
                     <button id="comecar" class="button azul">Iniciar Prova</button>
+                </div>
+
+                <div class="sucesso">
+                    <p>A prova foi submetida para avaliação!</p>
                 </div>
 
                 <h1></h1>

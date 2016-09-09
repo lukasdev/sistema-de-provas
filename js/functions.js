@@ -9,6 +9,12 @@ $(function(){
 
     function submeteProva(){
         var respostas = {};
+        if ($('#concluir').length  > 0) {
+
+            $('#concluir').removeClass('azul');
+            $('#concluir').text('Próxima');
+            $('#concluir').attr('id', 'next');
+        }
 
         $.each(provaAtual.questoes, function(){
             var questao = this;
@@ -37,7 +43,9 @@ $(function(){
             }
         });
 
-        
+        iniciada = 2;
+        $('.sucesso').fadeIn();
+        $('.prova'+provaId).remove();
         clearInterval(timer);
     }
 
@@ -52,6 +60,7 @@ $(function(){
             iniciada = 0;
             provaId = $(this).attr('data-id');
             $('.questoes').html('');
+            $('.sucesso').hide();
 
             $.ajax({
                 method:'POST',
@@ -151,7 +160,6 @@ $(function(){
             $('.timer').html(converteEmTempo(tempoSegundos));
             if (tempoSegundos == 0) {
                 submeteProva();
-                clearInterval(timer);
             }
         }, 1000);
 
