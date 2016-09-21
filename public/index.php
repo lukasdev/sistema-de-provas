@@ -1,4 +1,5 @@
-<?php include 'config.php';?>
+<?php include __DIR__ . '/../src/functions.php' ?>
+
 <!DOCTYPE HTML>
 <html lang="pt-BR">
     <head>
@@ -10,24 +11,19 @@
     <body>
         <section id="wrap-geral">
             <ul id="prova-lista">
-            <?php
-                $provas = $pdo->prepare("SELECT * FROM `provas` WHERE `status` = 1 ORDER BY `id` DESC");
-                $provas->execute();
+            
+                <?php foreach ($provas = getProvasNaoRespondidasByAlunoId(1) as $prova): ?>
 
-                while ($row = $provas->fetchObject()) {
-                    $verificaHistorico = $pdo->prepare("SELECT * FROM `historico` WHERE `id_aluno` = ? AND 
-                        `id_prova` = ?");
-                    $verificaHistorico->execute([1, $row->id]);
-                    if ($verificaHistorico->rowCount() == 0) {
-            ?>
-                <li class="open-prova prova<?php echo $row->id;?>" data-id="<?php echo $row->id;?>">
-                    <a href="#">
-                        <?php echo $row->titulo;?>
-                    </a>
+                <li class="open-prova prova<?php echo $prova->id ?>" data-id="<?php echo $prova->id ?>">
+                    <a href><?php echo $prova->titulo ?></a>
                 </li>
-            <?php }}?>
-            </ul>
 
+                <?php endforeach ?>
+
+                <?php if (! $provas) : ?>
+                <li>Não há provas para responder</li>
+                <?php endif ?>
+            </ul>
 
             <section id="wrap-prova">
                 <div class="begin">
@@ -53,8 +49,8 @@
         </section>
         
 
-        <script type="text/javascript" src="js/jquery.js"></script>
-        <script type="text/javascript" src="js/timer.js"></script>
-        <script type="text/javascript" src="js/functions.js"></script>
+        <script type="text/javascript" src="/js/jquery.js"></script>
+        <script type="text/javascript" src="/js/timer.js"></script>
+        <script type="text/javascript" src="/js/functions.js"></script>
     </body>
 </html>

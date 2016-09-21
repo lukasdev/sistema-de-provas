@@ -1,0 +1,6 @@
+#!/bin/bash
+
+PORT='3001'
+
+xdg-open http://localhost:$PORT/
+php -S localhost:$PORT -t public
